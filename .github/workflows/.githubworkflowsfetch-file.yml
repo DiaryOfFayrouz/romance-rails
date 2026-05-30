@@ -12,7 +12,7 @@ jobs:
       - name: Install unrar
         run: sudo apt-get install -y unrar
       - name: Download file
-        run: curl -L "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/43kci9tqmmrbvpp1?ab=0&r=" -o game.rar
+        run: curl -L "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/u3nlmfqefq4sqofdbmyi23?ab=0&r=" -o game.rar
       - name: Extract RAR
         run: unrar x game.rar
       - name: Commit and push
