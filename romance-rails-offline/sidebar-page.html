@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="sidebar-container"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      fetch("sidebar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("sidebar-container").innerHTML = data;
+          // Since this page is just the sidebar, we'll make sure it's open by default.
+          document.getElementById("sidebar").style.width = "250px";
+        });
+    });
+  </script>
+
+</body>
+</html>
