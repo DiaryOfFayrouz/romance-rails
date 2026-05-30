@@ -1,4 +1,4 @@
-name: Fetch File
+name: Fetch and Extract Game
 on: workflow_dispatch
 
 permissions:
@@ -9,12 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install unrar
+        run: sudo apt-get install -y unrar
       - name: Download file
-        run: curl -L "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/43kci9tqmmrbvpp1?ab=0&r=" -o romance-rails-offline_v0.0.5.rar
+        run: curl -L "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/43kci9tqmmrbvpp1?ab=0&r=" -o game.rar
+      - name: Extract RAR
+        run: unrar x game.rar
       - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add romance-rails-offline_v0.0.5.rar
-          git commit -m "Add romance-rails-offline_v0.0.5.rar"
+          git add .
+          git commit -m "Add game files"
           git push
