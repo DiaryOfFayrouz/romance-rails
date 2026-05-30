@@ -17,6 +17,8 @@ jobs:
         run: file game.rar
       - name: Extract archive
         run: 7z x game.rar
+      - name: Delete archive
+        run: rm game.rar
       - name: Commit and push
         run: |
           git config user.name "github-actions"
