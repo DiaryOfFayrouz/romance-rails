@@ -9,12 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install unrar
-        run: sudo apt-get install -y unrar
+      - name: Install tools
+        run: sudo apt-get install -y unrar p7zip-full
       - name: Download file
         run: curl -L "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/u3nlmfqefq4sqofdbmyi23?ab=0&r=" -o game.rar
-      - name: Extract RAR
-        run: unrar x game.rar
+      - name: Check file type
+        run: file game.rar
+      - name: Extract archive
+        run: 7z x game.rar
       - name: Commit and push
         run: |
           git config user.name "github-actions"
