@@ -12,11 +12,11 @@ jobs:
       - name: Install tools
         run: sudo apt-get install -y unrar p7zip-full
       - name: Download file
-        run: curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/m2c6rtpi7z3rj1n3y22tb9xe3nvl7old?ab=0&r=" -o game.zip
+        run: curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" "https://gfve4dog1.mxcontent.net/d/el6jz9k4a6gj9o/m2c6rtpi7z3rj1n3y22tb9xe3nvl7old?ab=0&r=" -o game.rar
       - name: Check file type
-        run: file game.zip
+        run: file game.rar
       - name: Extract archive
-        run: 7z x game.zip
+        run: 7z x game.rar
       - name: Check file type
         run: |
           file game.rar
