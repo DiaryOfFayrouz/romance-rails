@@ -12,7 +12,7 @@ jobs:
       - name: Install tools
         run: sudo apt-get install -y unrar p7zip-full
       - name: Download file
-        run: curl -L "https://pixeldrain.com/api/file/emBQxfRA" -o game.rar
+        run: curl -L "https://pixeldrain.com/api/file/TSMXdRXx" -o game.rar
       - name: Check file type
         run: file game.rar
       - name: Extract archive
